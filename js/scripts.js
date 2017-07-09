@@ -1,35 +1,34 @@
-/*1. Add Function*/
+/* 1. Business Logic.
+			Does not handle user interactivity.
+			Defines functions to be called by UI Logic.
+*/
 var add = function(number1, number2) {
 	return number1 + number2; 
 };
 
-/*2. Subtract Function*/
 var subtract = function(number1, number2) {
 	return number1 - number2;
 };
 
-/*3. Multiply Function*/
-var multiply = function() {
+var multiply = function(number1, number2) {
 	return number1 * number2;
 };
 
-/*4. Divide Function*/
-var divide = function() {
+var divide = function(number1, number2) {
 	return number1 / number2;
 }
 
-// alert(add(10,5));
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
+/* 2. User Interface Logic. 
+			Handles interactivity with user.
+			Calls functions defined in Business Logic */
+$(document).ready(function() {
+	$('form#add').submit(function(event) {
+		event.preventDefault();
+		var number1 = parseInt($('#add1').val());
+		var number2 = parseInt($('#add2').val());
+		// alert(add(number1, number2));
+		var result = add(number1, number2);
+		$('#output').text("Result = " + result); 
+	});
+});
 
-var result = add(number1, number2);
-alert("Add function returns = " + result);
-
-result = subtract(number1, number2);
-alert("Subtract function returns = " + result);
-
-result = multiply(number1, number2);
-alert("Multiply function returns = " + result);
-
-result = divide(number1, number2);
-alert("Divide function returns = " + result);
