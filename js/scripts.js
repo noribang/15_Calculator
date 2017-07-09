@@ -40,6 +40,13 @@ $(document).ready(function() {
 		$('#output-subtract').text("Result = " + result);
 	});
 	/* 3. Multiply */
+	$('form#multiply').submit(function(event) {
+		event.preventDefault();
+		var number1 = parseInt($('#multi1').val());
+		var number2 = parseInt($('#multi2').val());
+		var result = multiply(number1, number2);
+		$('#output-multiply').text("Result = " + result);
+	});
 
 	/* 4. Divide */
 });
