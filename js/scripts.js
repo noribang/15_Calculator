@@ -47,7 +47,14 @@ $(document).ready(function() {
 		var result = multiply(number1, number2);
 		$('#output-multiply').text("Result = " + result);
 	});
-
 	/* 4. Divide */
+	$('form#divide').submit(function(event) {
+		event.preventDefault();
+		var number1 = parseInt($('#divide1').val());
+		var number2 = parseInt($('#divide2').val());
+		var result = divide(number1, number2);
+		$('#output-divide').text("Result = " + result)
+	});
 });
+
 
