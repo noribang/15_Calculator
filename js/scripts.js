@@ -22,13 +22,25 @@ var divide = function(number1, number2) {
 			Handles interactivity with user.
 			Calls functions defined in Business Logic */
 $(document).ready(function() {
+	/* 1. Add */
 	$('form#add').submit(function(event) {
 		event.preventDefault();
 		var number1 = parseInt($('#add1').val());
 		var number2 = parseInt($('#add2').val());
 		// alert(add(number1, number2));
 		var result = add(number1, number2);
-		$('#output').text("Result = " + result); 
+		$('#output-add').text("Result = " + result); 
 	});
+	/* 2. Subtract */
+	$('form#subtract').submit(function(event) {
+		event.preventDefault();
+		var number1 = parseInt($('#sub1').val());
+		var number2 = parseInt($('#sub2').val());
+		var result = subtract(number1, number2);
+		$('#output-subtract').text("Result = " + result);
+	});
+	/* 3. Multiply */
+
+	/* 4. Divide */
 });
 
